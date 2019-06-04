@@ -1,0 +1,19 @@
+{
+  "name": "node-mocha",
+  "version": "1.0.0",
+  "description": "Testing node with mocha - tutorial",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mekbib-awono/node-mocha.git"
+  },
+  "author": "Mekbib Awono",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mekbib-awono/node-mocha/issues"
+  },
+  "homepage": "https://github.com/Mekbib-awono/node-mocha#readme"
+}
