@@ -1,5 +1,10 @@
 const assert = require('assert');
 const auth = require('../src/auth')
+const should = require('chai').should();
+const chai = require('chai');
+const chaiAsPromised = require('chai-as-promised');
+chai.use(chaiAsPromised);
+chai.should();
 
 describe('Auth', () => {
     describe('isAuthorized', () => {
@@ -12,7 +17,8 @@ describe('Auth', () => {
         it('Should return true if authorized', () => {
             auth.setRoles(['user', 'admin']);
             const isAuthorized = auth.isAuthorized('admin')
-            assert.equal(true, isAuthorized);
+            // assert.equal(true, isAuthorized);
+            isAuthorized.should.be.true;
         });
     });
 
@@ -35,4 +41,17 @@ describe('Auth', () => {
             })
         });
     });
+
+    describe('isAuthorizedPromise', () => {
+        it('Should return false if not authorized', function() {
+            auth.setRoles(['user']);
+            return auth.isAuthorizedPromise('admin')
+                    .should
+                    .eventually
+                    .be
+                    .false;
+        });
+    
+    });
+
 })

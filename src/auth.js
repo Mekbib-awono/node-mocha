@@ -14,4 +14,12 @@ exports.isAuthorizedAsync = (neededRole, cb) => {
     }, 2100)
 };
 
+exports.isAuthorizedPromise = (neededRole, cb) => {
+    return new Promise(function (resolve, reject) {
+        setTimeout(function (){
+            resolve(roles.includes(neededRole));
+        }, 0)
+    })
+}
+
 
